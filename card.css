@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    ;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#FDCFFA, #D78FEE, #9B5DE0);
+    /* background-repeat: no-repeat; */
+}
+
+.wrapper {
+    width: 360px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 55px;
+    /* border: 2px solid #ccc; */
+    border-radius: 28px;
+}
+
+header label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header .tab {
+    height: 100%;
+    /* width: 120px; */
+    position: absolute;
+    background: linear-gradient(145deg, #FDCFFA, #D78FEE, #9B5DE0);
+    border-radius: inherit;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    transition: all 0.4s ease;
+    
+}
+
+#tab1:checked~header .tab1,
+#tab2:checked~header .tab2,
+#tab3:checked~header .tab3 {
+    color: white;
+}
+
+#tab1:checked~header .tab {
+    left: 0%;
+    width: 95px;
+    transform: translateX(5%);
+}
+
+#tab2:checked~header .tab {
+    left: 50%;
+    width: 120px;
+    transform: translateX(-50%);
+}
+
+#tab3:checked~header .tab {
+    left: 100%;
+    width: 95px;
+    transform: translateX(-105%);
+}
+
+input {
+    display: none;
+}
+
+.row .price {
+    text-align: center;
+    margin: 20px 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 25px;
+}
+
+.price span {
+    font-size: 55px;
+    font-weight: 500;
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.price span::before {
+    position: absolute;
+    content: "$";
+    font-size: 20px;
+    left: -10px;
+    top: 17px;
+    font-weight: 400;
+}
+
+p{
+    margin:10px;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background: linear-gradient(145deg, #FDCFFA, #D78FEE, #9B5DE0);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+li{
+    list-style: none;
+}
+.wrapper .btn:hover{
+    transform: scale(0.98);
+    background: linear-gradient(145deg, #fac6f7, #d685f1, #9B5DE0);
+}
+.cardarea{
+    overflow: hidden;
+}
+.wrapper .cardarea .cards{
+    width:300% ;
+    display: flex;
+    
+}
+.cards .row{
+    width: 34.4%;
+}
+.cards{
+    width: 100%;
+    flex-shrink: 0;
+}
+.cards .row1{
+    transition: all 0.3s ease ;
+}
+#tab1:checked~.cardarea .cards .row1 {
+   transform: translateX(0%);
+}
+
+#tab2:checked~.cardarea .cards .row1 {
+    transform: translateX(-100%);
+}
+
+#tab3:checked~.cardarea .cards .row1 {
+    transform: translateX(-200%);
+}
+
